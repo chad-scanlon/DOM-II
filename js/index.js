@@ -16,6 +16,19 @@ funBusImage.addEventListener("drag", (event) => {
 let colorChange = document.querySelector("body");
 colorChange.addEventListener("keydown", (event) => {
     event.target.style.backgroundColor = "yellowgreen";
+    event.stopPropagation();
+})
+
+let containerChange = document.querySelector(".content-section");
+containerChange.addEventListener("keydown", (event) => {
+    event.target.style.backgroundColor = "purple";
+
+})
+
+let contentChange = document.querySelector(".content-pick");
+contentChange = addEventListener("keydown", (event) => {
+    event.target.style.backgroundColor = "blue"
+
 })
 
 let logo = document.querySelector(".logo-heading")
@@ -63,45 +76,20 @@ buttonsChanged.forEach(button => {
     })
 });
 
+// Task 3
 
-// let dragged = document.querySelector(".text-content h2");
-// dragged.addEventListener("drag", (event) => {
-// event.target
-// }, false);
-// document.addEventListener("dragstart", (event) => {
-//     dragged = event.target;
-//     event.target.style.opacity = ".5"
-// }, false);
-// document.addEventListener("dragend", (event) => {
-//     dragged = event.target;
-//     event.target.style.opacity = "";
-// }, false);
-// document.addEventListener("dragover", (event) => {
-//     event.preventDefault();
-// }, false);
-// document.addEventListener("dragenter", (event) => {
-//     // highlight potential drop target when the draggable element enters it
-//     if (event.target.className == ".content-section") {
-//         event.target.style.background = "purple";
-//     }
-// }, false);
 
-// document.addEventListener("dragleave", function(event) {
-//     // reset background of potential drop target when the draggable element leaves it
-//     if (event.target.className == ".content-section") {
-//         event.target.style.background = "";
-//     }
-// }, false);
-// document.addEventListener("drop", (event) => {
-//     // prevent default action (open as link for some elements)
-//     event.preventDefault();
-//     // move dragged elem to the selected drop target
-//     if (event.target.className == ".content-section") {
-//         event.target.style.background = "";
-//         dragged.parentNode.removeChild(dragged);
-//         event.target.appendChild(dragged);
-//     }
-// }, false);
+
+let navStop = document.querySelectorAll("nav");
+navStop.forEach(navLink => {
+    navLink.addEventListener("click", (event) => {
+        event.target.style.textTransform = "uppercase";
+    })
+    navLink.addEventListener("click", (event) => {
+        event.preventDefault();
+    })
+})
+
 
 // TESTER
 // let buttonTest = document.querySelector(".btn");
